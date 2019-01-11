@@ -49,7 +49,10 @@ class CRM < Contact
   end
 
   def modify_existing_contact
-
+      puts "enter id of the contact that you want to modify"
+      id = gets.chomp
+      
+    
   end
 
   def delete_contact

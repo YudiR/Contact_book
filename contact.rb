@@ -32,8 +32,14 @@ attr_accessor :first_name, :last_name, :email, :note
 
   # This method should accept an id as an argument
   # and return the contact who has that id
-  def self.find
-
+  def self.find(input_id)
+      @@contacts.each do |c|
+       if input_id == c.id
+        return c
+       end
+       
+      end
+      return nil
   end
 
   # This method should allow you to specify 
