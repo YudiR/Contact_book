@@ -1,5 +1,7 @@
-class CRM
+require_relative 'contact'
 
+class CRM < Contact 
+  
   def initialize
 
   end
@@ -35,7 +37,15 @@ class CRM
   end
 
   def add_new_contact
-
+    puts "first name"
+    first_name = gets.chomp
+    puts "last name"
+    last_name = gets.chomp
+    puts "email"
+    email = gets.chomp
+    puts "note"
+    note = gets.chomp
+  Contact.create(first_name, last_name, email, note)
   end
 
   def modify_existing_contact
