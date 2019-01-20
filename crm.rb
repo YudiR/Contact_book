@@ -7,7 +7,7 @@ class CRM < Contact
   end
 
   def main_menu
-    while true # repeat indefinty
+    while true # repeat indefinitely
       print_main_menu
       user_selected = gets.to_i
       call_option(user_selected)
@@ -50,22 +50,37 @@ class CRM < Contact
 
   def modify_existing_contact
       puts "enter id of the contact that you want to modify"
-      id = gets.chomp
-      
-    
+      id = gets.chomp.to_i
+      found_contact = Contact.find(id)
+      puts "what would you like to modify?"
+      attribute = gets.chomp
+      puts "enter new value"
+      value = gets.chomp
+      found_contact.update(attribute, value)
+          
   end
 
   def delete_contact
+    puts "enter id of the contact that you want to modify"
+      id = gets.chomp
+      c.id = 0
 
   end
 
   def display_all_contacts
+    p Contact.all
     
   end
 
   def search_by_attribute
+    puts "Enter attribute you want to search by"
+    attribute = gets.chomp
+    puts ""
     
   end
 
 
 end
+
+a = CRM.new
+a.main_menu
