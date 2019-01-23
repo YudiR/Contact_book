@@ -98,6 +98,7 @@ attr_accessor :first_name, :last_name, :email, :note
   # This method should delete the contact
   # HINT: Check the Array class docs for built-in methods that might be useful here
   def delete
+    Contact.delete_at
 
   end
 
